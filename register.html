@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test Portal</title>
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="./form.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" defer src="./script.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    </head>
+    <body>
+        <container>
+            <header>
+                <img class="click" onclick="OpenNewElem('')" width="50px" height="50px" alt="logo" src="logo.png">
+                <div class="header-options"></div>
+                <div class="header-account ignore" onclick="ProfileClicked(this)">
+                    <i class="fa-solid fa-user header-user-logo"></i>
+                    <div class="header-user-info account-name">Zaloguj Się</div>
+                </div>
+            </header>
+            <div class="main">
+                <div>
+                    <form>
+                        <span><label for="name">Nazwa: </label><input type="text" label="name"></span>
+                        <span><label for="password">Hasło: </label><input type="password" label="password"></span>
+                        <span><label for="spassword">Potwórz Hasło: </label><input type="password" label="spassword"></span>
+                        <button type="button" onclick="GetLoginInfo(this,true)">Stwórz Konto</button>
+                    </form>
+                </div>
+            </div>
+        </container>
+    </body>
+</html>

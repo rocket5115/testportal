@@ -1,0 +1,105 @@
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+form>span {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+form>button {
+    position: relative;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    left: 10%;
+    background-color: #1f1f2d;
+    transition: 100ms ease-in-out;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    border: 0px;
+}
+
+form>button:hover {
+    cursor: pointer;
+    background-color: rgba(52, 48, 94, 0.932);
+    color: rgba(0, 0, 0, 0.714);
+}
+
+input[type="text"],input[type="password"] {
+    position: relative;
+    min-width: 50%;
+    width: fit-content;
+    min-height: 30px;
+    height: auto;
+    text-align: center;
+    background-color: rgba(34, 34, 85, 0.555);
+    color: white;
+    font-size: 25px;
+    outline: none;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.form-control {
+    position: absolute;
+    left: 35%;
+    min-width: 30%;
+    max-width: 100%;
+    top: 10%;
+    min-height: 200px;
+    display: grid;
+    grid-template-rows: 50px calc(100% - 85px);
+    gap: 15px;
+    padding: 10px;
+    background-color: rgba(147, 144, 144, 0.886);
+    border-radius: 15px;
+}
+
+.form-control::after {
+    content: "";
+    position: absolute;
+    top: 60px;
+    width: 80%;
+    left: 10%;
+    height: 2px;
+    background-color: rgba(42, 39, 39, 0.235);
+}
+
+.form-title {
+    font-size: 26px;
+}
+
+.form-wrapper {
+    border-radius: 10px;
+    display: flex;
+    padding-top: 5px;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 20px;
+}
+
+.form-wrapper>* {
+    background-color: rgba(97, 93, 93, 0.886);
+    border-radius: 5px;
+    min-height: 35px;
+    max-height: 35px;
+    line-height: 35px;
+    user-select: none;
+}
+
+.form-wrapper>*:hover {
+    cursor: pointer;
+}
+
+.form-wrapper>input {
+    height: 35px !important;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test Portal</title>
+        <link rel="stylesheet" href="./styles.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" defer src="./script.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    </head>
+    <body>
+        <container>
+            <header>
+                <img class="click" onclick="OpenNewElem('')" width="50px" height="50px" alt="logo" src="logo.png">
+                <div class="header-options"></div>
+                <div class="header-account ignore" onclick="ProfileClicked(this)">
+                    <i class="fa-solid fa-user header-user-logo"></i>
+                    <div class="header-user-info">Zaloguj Się</div>
+                </div>
+            </header>
+            <div class="main">
+                <div>
+                    <p style="font-size: 28px">Twórz i komponuj swoje własne testy za darmo<br><span class="click" onclick="Register()">Zarejestruj się</span> lub <span class="click" onclick="Login()">Zaloguj</span> i zacznij już teraz!<br><br>Jeżeli chcesz wykonać test, wejdź <span class="click" onclick="OpenNewElem('test')">tutaj</span></p>
+                </div>
+            </div>
+        </container>
+    </body>
+</html>

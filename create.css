@@ -1,0 +1,53 @@
+:root {
+    --container-height: 100%;
+}
+
+.main>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main>div:has(.elem-main) {
+    min-height: auto;
+    height: auto;
+}
+
+container:has(.elem-main) {
+    min-height: 100%;
+    height: var(--container-height);
+}
+
+.elem-main {
+    position: relative;
+    width: 80%;
+    min-height: 200px;
+    background-color: black;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.elem-main>*:not(.elem-wrapper) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 40px;
+    gap: 50px;
+}
+
+.elem-footer>*:hover {
+    cursor: pointer;
+}
+
+.elem-wrapper:has(input[type="checkbox"]),.elem-wrapper:has(input[type="radio"]) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
