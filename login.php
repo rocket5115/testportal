@@ -1,21 +1,24 @@
 <?php
-    if((isset($_POST['name']) and isset($_POST['password']))or(isset($_COOKIE['name']) and isset($_COOKIE['password']))){
-        $un;
-        $pw;
-        if(isset($_POST['name']) and $_POST['password']){
-            $un = $_POST['name'];
-            $pw = $_POST['password'];
+    require "main.php";
+    if(IsPostSet(["name", "password"]) or IsCookieSet(["name","password"])){
+        //initialize two variables
+        $username;
+        $password;
+        if(isset($_POST['name'])){ // Check only one value since the other one has to be present
+            $username = $_POST['name'];
+            $password = $_POST['password'];
         } else {
-            $un = $_COOKIE['name'];
-            $pw = $_COOKIE['password'];
+            $username = $_COOKIE['name'];
+            $password = $_COOKIE['password'];
         };
         $conn = new mysqli("localhost", "root", "", "testportal");
         if ($conn->connect_error) {
-            die("failed Connection failed: " . $conn->connect_error);
+            // Don't give any unimportant information to user
+            die("failed Nie znaleziono konta!");
         };
-        $result = $conn->query('SELECT uid FROM users WHERE username="'.$un.'" AND password="'.$pw.'"');
+        $result = $conn->query('SELECT uid FROM users WHERE username="'.$username.'" AND password="'.$password.'"');
         if ($result->num_rows > 0) {
-            echo($un);
+            echo($username);
         } else {
             echo("failed Nie znaleziono konta!");
         };
